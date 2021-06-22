@@ -1,0 +1,92 @@
+{
+    // Use IntelliSense to find out which attributes exist for C# debugging
+    // Use hover for the description of the existing attributes
+    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "entity_creator",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_entity_creator",
+            "program": "${workspaceFolder}/entity_creator/bin/Debug/net5.0/entity_creator.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "externalTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "map_api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_map_api",
+            "program": "${workspaceFolder}/map_api/bin/Debug/net5.0/map_api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/map_api",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "console": "externalTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "user_api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_user_api",
+            "program": "${workspaceFolder}/user_api/bin/Debug/net5.0/user_api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/user_api",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "console": "externalTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "crud_api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_crud_api",
+            "program": "${workspaceFolder}/crud_api/bin/Debug/net5.0/crud_api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/crud_api",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "console": "externalTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        }
+    ]
+}
